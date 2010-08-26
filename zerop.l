@@ -1,16 +1,6 @@
-(zerop 0)
-; => T
-(zerop 1)
-; => NIL
-(zerop 0.0)
-; => T
-(zerop 1.0)
-; => NIL
-(zerop 'atom)
-; => 例外
-(zerop nil)
-; => 例外
-(zerop "NIL")
-; => 例外
-(zerop 2147483647)
-; => NIL
+(defun fact (n)
+  (cond ((zerop n) 1)
+        (t (* n (fact (1- n))))))
+
+(fact 10)
+;=> 3628800
